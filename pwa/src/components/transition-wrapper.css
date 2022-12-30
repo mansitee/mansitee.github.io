@@ -1,0 +1,24 @@
+.in-transition {
+  position: absolute;
+  margin-right: 15px;
+  opacity: 0;
+}
+
+/** Container widths correspond to Bootstrap theme. */
+@media (min-width: 768px) {
+  .in-transition {
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .in-transition {
+    width: 940px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .in-transition {
+    width: 1140px;
+  }
+}
