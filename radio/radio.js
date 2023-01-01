@@ -12,7 +12,7 @@ var contenidoweb='<p> \
          <p class="audio">       <img class="container"id="LogoEmisora" src="./vacio.png" width="30px" height="30px"> \
                 <audio class="audioo"id="UrlEmisora" autoplay controls src="">Audio no disponible</audio> </p> \
                 <br> \
-                <h2> sorry \
+                <h2>  \
                     <a href="#" onclick="Retroceder()"> \
                         <span class="glyphicon glyphicon-backward"></span> \
                     </a> \
