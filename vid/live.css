@@ -12,6 +12,7 @@ body {
 
 a{background:transparent;color:#000;line-height:1.4;padding-left:1px;padding-right:6px;text-decoration:none;outline:none;-webkit-tap-highlight-color: transparent;}
 
+.card embed{Border:none;height:100%;}
 
 .live {align-items: center;
   position: fixed;
