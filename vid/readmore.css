@@ -9,7 +9,7 @@ body {
   background: #000;
   color: #fff;
 }
-
+.card embed{border:none;}
 .live {
   height: 120px;
   width: 100%;
