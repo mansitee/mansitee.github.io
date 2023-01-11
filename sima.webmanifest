@@ -1,0 +1,25 @@
+
+{
+  "name": "PWA Template",
+  "short_name": "MANsitee",
+  "description": "A Basic PWA Template mansitee.",
+  "default_locale": "en",
+  "start_url": "./?utm_source=pwa_install",
+  "scope": "./",
+  "background_color": "#000",
+  "theme_color": "#000",
+  "display": "standalone",
+  "icons": [{
+      "src": "./icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }],
+  "developer": {
+    "name": "mansitee",
+    "url": "https://mansitee.github.io/mansitee",
+  },
+  "installs_allowed_from": [
+    "*"
+  ]
+} 
