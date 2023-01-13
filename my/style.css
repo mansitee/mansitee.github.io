@@ -54,7 +54,7 @@ main ul {tpadding: 0.2em;}
 main li {list-style:none;
 	line-height: 1.4em;
 	tmargin-left:2px;}
-main img{tfloat:right;width:100%; height:150px;border-radius:10px;}
+main img{tfloat:right;width:100%; height:150px;border-radius:10px;margin:10px;}
 
 
 .profile{font-size:18px;color:#000;padding-top: 10px;border: 4px solid #5600ffd1; border-radius: 50%;
