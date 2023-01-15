@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Mari Belajar Coding</title>
+ <style>.countries {
+  display:flex;
+  column-gap: 1em;background: lightgrey;
+ box-shadow: #d11bff42 0 15px 40px -5px;
+ z-index: 1;
+ border-radius: 21px;
+ overflow: hidden;}
+ 
+img{background: linear-gradient(rgba(255, 255, 255, 0.473), rgba(150, 150, 150, 0.25));box-shadow: #d11bff42 0 15px 40px -5px; padding:5px 10px 5px 10px;
+}
+
+body {width: 100%;height: 254px; padding:0; margin:0;
+ background: lightgrey;
+ tbox-shadow: #d11bff42 0 15px 40px -5px;
+ z-index: 1; border-radius: 21px;
+}
+
+ .card__content {
+ background: linear-gradient(rgba(255, 255, 255, 0.473), rgba(150, 150, 150, 0.25));box-shadow: #111 0 15px 70px -5px; padding:5px 10px 5px 10px;
+ z-index: 1; margin-top:20px;
+ left: 0;
+ top: 0;
+ height: 100%;
+ border-radius: 21px;
+}
+ </style>
+  
+ <script type="text/javascript">
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+         var data=JSON.parse(xhttp.responseText);
+         data.forEach(function(element) {
+      document.getElementById("demo").innerHTML +="<div class='card__content'>Name :" + element.name + "<div class='countries'>Date:<b>" + element.date + " </b>Time :" + element.time +
+"</div><br>Carrier :" + element.carrier + "<br>Season :" + element.season +      
+      
+"<br>OriginalName :" + element.originalName +  "<br>Img :<img src='" + element.img + "'>" + element.name + " </img><br>official :<a href='" + element.official + "'>" + element.name + " </a><br>description :" + element.description +
+      "<br><br>";
+    });
+      }
+  };
+  xhttp.open("GET", "data/index.json", true);
+  xhttp.send();
+
+ </script>
+</head>
+<body>
+<p id="demo"></p>
+</body>
+</html>
