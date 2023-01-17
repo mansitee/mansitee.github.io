@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Manlink</title>
+	<meta name="description" content="A list of A-Frame entries submitted to the js13kGames 2017 competition, used as an example for the MDN articles about Progressive Web Apps.">
+	<meta name="author" content="end3r">
+	<meta name="theme-color" content="#B12A34">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:image" content="icons/icon-512.png">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="style.css">
+<style>* {margin: 0;padding: 0;
+  box-sizing: border-box;}
+body {max-width:500px;
+    background: #efefef;
+    overflow: none;
+overflow-wrap:
+break-word;
+word-wrap:
+break-word;
+-ms-word-break: break-all;
+word-break: break-all;
+word-break: break-word;
+-ms-hyphens: auto;
+-moz-hyphens: auto;
+-webkit-hyphens: auto;
+hyphens: auto;
+font-family: 'Open Sans', sans-serif;
+font-size: 14px;
+color: #777777;
+background-color: #f2f2f2;
+margin: 0 auto;
+max-width: 500px;
+-webkit-text-size-adjust: none;
+text-size-adjust: none;
+}
+body{font-family:'Montserrat';
+  background:#ffffff;color:#000;}
+  
+  
+  
+a:link{color:black; text-decoration:none;cursor: pointer;}
+a:nav{color:white;text-decoration:none;}
+a:button{color:pink; text-decoration:none;cursor:pointer; border:none;}
+a{-webkit-transition:.2s all;transition:.2s all;color:pink;}a:hover{color:pink;text-decoration:none}a:active,a:focus{text-decoration:none}
+  
+.newsfeed{tbackground:#ffffff;padding:0 3px; padding-top:295px;tdisplay:flex;position:relative;}
+
+.tnewsfeedbg{background:#ffffff;padding:0 3px; tpadding-top:290px;tdisplay:flex;position:relative;}
+
+
+.card, article.card{width:100%; height:100% background:#fff; box-shadow:0 0 10px 3px rgba(0, 0, 0, .1);margin-bottom:8px;border-radius:15px 15px 1px 15px;font-size:14px;}
+ 
+.card .picture{background-image: url('../img/image7.jpg');background-position:50%; background-size: cover;
+height:200px; width:100%;border-top-left-radius:1px;border-top-right-radius:1px;}
+
+.card .content{display:flex;flex-direction:column;padding:15px 10px;}
+.card .header {display:flex;align-items:center;}
+  
+.card .profile-pic {background:pink;tbackground-image: url('asset/img/user.png');background-position: 50%;background-size: cover;
+height:40px; width:40px; border-radius:50%;} 
+  
+.card .profile-pic::before {background-image: url('../img/user2.png');background-position:50%;
+background-size:cover;height:40px; width:40px;border-radius:50%;}
+   
+.card .detail{margin-left:10px;}
+.card .posted{font-size:10px;padding-top:3px;}
+.card .desc{padding-top:10px;line-height:1.5;}
+.card .tags{font-size:12px;color:#000;padding-top: 10px;}
+.card .footer{display: flex;justify-content:space-between;padding-top:20px;}
+.card .footer .like{flex: 0 0 35%;}
+.card .footer .comment 
+{flex:0 0 35%;}
+.card .footer .share 
+{flex:0 0 20%;background:pink;text-align:center;color:#000;border-radius:15px 15px 1px 15px;padding:5px 10px 5px 10px;}
+.card .footer 
+{padding-right: 3px;}
+ 
+.iconl{background:pink;height:30px; width:30px;border-radius:50px;margin:5px 10px 20px 20px;color:#000;font-size:36px;font-weight:700;}
+}
+
+.like i, .comment i, .share i, .tags i {color:#000;font-size:16px;font-weight:700;}
+
+
+ .head{position:fixed;top: 0;left: 0;
+ right:0;transition:all 0.3s ease-in-out;border-radius: 5px;padding:30px;}
+.head svg{font-size:16px;font-weight:700;height:16px; width:18px;}
+
+.head p{font-size:12px;}
+.head .ok{float:right;font-size:16px;} 
+.head .posting{font-size:15px;padding:15px 1px 5px 1px;}
+
+.head .posting pro{font-size:15px;padding:15px 1px 5px 1px;align-items: center; justify-content: center;}
+
+.head .footer{display: flex;justify-content:space-between;padding-top:20px;} 
+
+ .head .like{flex: 0 0 35%;}
+.head .footer .comment 
+{flex:0 0 35%;}
+.head .footer .share 
+{flex:0 0 20%;background:pink;text-align:center;color:#000;border-radius:15px 15px 1px 15px;padding:5px 10px 5px 10px;}   
+
+
+
+article{font-family:'Montserrat';
+  background:#ffffff;color:#000; display: grid; padding-top:5px;}
+  
+
+article img[data-src] {filter: blur(0.2em);}
+article img {filter: blur(0em);transition: filter 0.5s;}
+
+
+video{width:100%;height:100%;box-shadow:0 0 10px 3px rgba(0,0,0,.1);background-image:url('../img/image7.jpg');background-position:50%;
+background-size:cover;margin-bottom:5px;margin-top:5px;font-size:14px;} 
+  
+audio{width:100%;margin-bottom:10px;
+margin-top:20px;border-radius:50px;
+font-size:14px;} 
+  
+.video{position:relative;height: 100%;width:100%;background-color: white;scroll-snap-align:start;}
+
+.video__player{object-fit:cover;width:100%;height:100%;}
+
+</style>		
+<link rel="manifest" href="sima.webmanifest"> <script src="data.js" defer></script> <script src="app.js" defer></script>	</head>
+<body> 
+<div class='head'> <div class='profile-pic'></div> <div class='detail'> <p class='name'><h3>MANsitee<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class=""><path fill="pink" d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"></path></svg>  </h3> </p> <p class='posted'> <strong>@mansitee</strong> #betain<a class='ok'href='http://WEBSITE/'> Suka <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="pink" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg> 27</a>   </p> </div> 
+
+<div class='posting'> 
+<center><br/><br/> <h1>#Belajar No Mager</h1>  <hr><h4>Ayo, Masih Belajar</h4>°<b>Se</b>buah Karya Yang Dibuat Dengan Cinta°<br/> </center>
+<div class='footer'> <div class='like'> <span><a href='https://twitter.com/TWITTER'><strong>Lemari</strong>/01</a></span> </div> <div class='comment'> <span><a href='https://twitter.com/TWITTER'>Repo/12</a></span>       </div> <div class='share'>  <span>🍅</span> </div> </div> </div> </div>
+
+        
+<section class="newsfeed">    	
+<section id="content"></section>
+ </div> </div> </div>       	
+</div> </div> </div>       	
+
+    
+</main>
+</body>
+</html>
