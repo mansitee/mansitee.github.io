@@ -1,0 +1,34 @@
+{
+    "width": "500px",
+    "font": "Roboto",
+    "font_url": "https://fonts.googleapis.com/css?family=Roboto&display=swap",
+    "background": "#212121",
+    "header_name": "Mansitee",
+    "header_img": "https://qery.cz/src/image/favicon-144.png",
+    "header_img_border": "50%",
+    "header_color": "#FFFFFF",
+    "link_background": "#871ee3",
+    "link_background_hover": "#b775f080",
+    "link_border": "5px",
+    "link_img_border": "5px",
+    "link_name_color": "#FFFFFF",
+    "link_description_color": "#b8b8b8",
+    "links": [
+        {
+            "name": "Instagram",
+            "description": "Check my cool photos!",
+            "url":"https://instagram.com/c"
+        },
+        {
+            "name": "Youtube",
+            "description": "There are all my 360 noscope montages",
+            "url":"https://www.youtube.com/channel/UC4TNbbC8jqvp0ScLYkqP62g"
+        },
+        {
+            "name": "Web",
+            "description": "Also check my cool web :)",
+            "url":"https://mansitee.github.io",
+            "background":"url(https://i.pinimg.com/originals/c4/05/e5/c405e59f2114f36defe07f92a771d9a5.gif)"
+        }
+    ]
+}

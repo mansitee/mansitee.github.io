@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style id="style">
+        :root {
+            --width: "";
+            --font: "";
+            --background: "";
+            --header_img_border: "";
+            --header_color: "";
+            --link_background: "";
+            --link_background_hover: "";
+            --link_border: "";
+            --link_img_border: "";
+            --link_name_color: "";
+            --link_description_color: "";
+        }
+
+        body {
+            padding: 20px;
+            margin: 0;
+            box-sizing: border-box;
+            background: var(--background);
+            font-family: var(--font);
+        }
+
+        main {
+            display: grid;
+            z-index: 1;
+            margin: auto;
+            padding: 20px;
+            max-width: var(--width);
+            position: relative;
+            row-gap: 20px;
+        }
+
+        header {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        header img {
+            display: inline-block;
+            object-fit: cover;
+            width: 100px;
+            height: 100px;
+            border-radius: var(--header_img_border);
+        }
+
+        header span {
+            display: inline-block;
+            width: 100%;
+            color: var(--header_color);
+        }
+
+        section {
+            display: grid;
+            row-gap: 20px;
+        }
+
+        footer {
+            color: #a8a8a8;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        footer a:hover {
+            color: #ff4444;
+        }
+
+        .box_link {
+            display: flex;
+            column-gap: 10px;
+            border-radius: var(--link_border);
+            background: var(--link_background);
+            height: auto;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .box_link:hover {
+            background: var(--link_background_hover);
+        }
+
+        .box_link img {
+            object-fit: cover;
+            width: 30px;
+            height: 30px;
+            margin: auto 0 auto 0;
+            border-radius: var(--link_img_border);
+        }
+
+        .box_link div span {
+            width: 100%;
+            display: inline-block;
+            overflow-wrap: anywhere;
+        }
+
+        .link_name {
+            font-weight: 800;
+            color: var(--link_name_color);
+        }
+
+        .link_description {
+            color: var(--link_description_color);
+        }
+    </style>
+    <script>
+        async function loadConfig() {
+            const response = await fetch("config.json");
+            const cfg = await response.json();
+            const root = document.querySelector(":root");
+            // Set css variables   
+            root.style.setProperty("--width", cfg["width"]);
+            root.style.setProperty("--font", cfg["font"]);
+            root.style.setProperty("--background", cfg["background"]);
+            root.style.setProperty("--header_img_border", cfg["header_img_border"]);
+            root.style.setProperty("--header_color", cfg["header_color"]);
+            root.style.setProperty("--link_background", cfg["link_background"]);
+            root.style.setProperty("--link_background_hover", cfg["link_background_hover"]);
+            root.style.setProperty("--link_border", cfg["link_border"]);
+            root.style.setProperty("--link_img_border", cfg["link_img_border"]);
+            root.style.setProperty("--link_name_color", cfg["link_name_color"]);
+            root.style.setProperty("--link_description_color", cfg["link_description_color"]);
+            //Render header
+            document.getElementById("header_name").innerText = cfg["header_name"];
+            document.getElementById("header_img").src = cfg["header_img"];
+            //Render links
+            for (var i = 0; i < cfg["links"].length; i++) {
+                let box_link = `
+                <a class="box_link" href="{ link_url }" { link_custom }>
+                    <img src="{ link_img }">
+                    <div>
+                        <span class="link_name">{ link_name }</span>
+                        <span class="link_description">{ link_description }</span>
+                    </div>
+                </a>`;
+                box_link = box_link.replaceAll("{ link_img }", new URL(cfg["links"][i]["url"]).origin + "/favicon.ico");
+                box_link = box_link.replaceAll("{ link_url }", cfg["links"][i]["url"]);
+                box_link = box_link.replaceAll("{ link_name }", cfg["links"][i]["name"]);
+                box_link = box_link.replaceAll("{ link_description }", cfg["links"][i]["description"]);
+
+
+                var link_custom = `style="`;
+                if (cfg["links"][i]["background"] != null) {
+                    link_custom = link_custom + "background: " + cfg["links"][i]["background"] + ";";
+                }
+                box_link = box_link.replaceAll("{ link_custom }", link_custom+`"`);
+                document.getElementById("links").insertAdjacentHTML("beforeend", box_link);
+            }
+            //Set title
+            document.title = cfg["header_name"]
+
+            //Set font
+            var link = document.createElement("link");
+            link.setAttribute("rel", "stylesheet");
+            link.setAttribute("type", "text/css");
+            link.setAttribute("href", cfg["font_url"]);
+            document.head.appendChild(link);
+
+            //Set favicon
+            var link = document.createElement("link");
+            link.setAttribute("rel", "icon");
+            link.setAttribute("href", cfg["header_img"]);
+            document.head.appendChild(link);
+        }
+        loadConfig();
+    </script>
+</head>
+
+<body>
+    <main>
+        <header>
+            <img id="header_img" src="" alt="profile picture">
+            <span id="header_name">Username</span>
+        </header>
+        <section id="links">
+        </section>
+        <footer>
+            <!-- I'll be very happy if you leave it here 🥺👉👈 -->
+            Created by <a href="https://mansitee.github.io/app">Mansitee</a> with ❤️
+        </footer>
+    </main>
+</body>
+
+</html>
