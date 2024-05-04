@@ -65,6 +65,13 @@
   "lang": "id",
   "orientation": "portrait",
 "handle_links": "preferred",
+"protocol_handlers": [
+  {
+    "protocol": "app",
+    "url": "/p=%s"
+  }
+],
+
   "display_override": [
     "browser",
     "standalone",
