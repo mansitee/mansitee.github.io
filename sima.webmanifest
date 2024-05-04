@@ -69,5 +69,17 @@
     "navigation",
     "personalization",
     "utilities"
-  ]
+  ],
+  "edge_side_panel": {
+    "preferred_width": 600
+  },
+  "share_target": {
+    "method": "GET",
+    "action": "/app/",
+    "params": {
+      "title": "App",
+      "text": "App js html ",
+      "url": "https://mansitee.github.io/app/"
+    }
+  }
 }
