@@ -55,6 +55,13 @@
     {"origin": "mansitee.github.io/app"},
     {"origin": "mansitee.github.io/app/a"},
   ],
+{
+  "web_apps": [
+    {
+      "web_app_identity": "https://docs.pwabuilder.com/"
+    }
+  ]
+},
 
   "lang": "id",
   "orientation": "portrait",
