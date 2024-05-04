@@ -50,19 +50,6 @@
   "background_color": "#000",
   "dir": "ltr",
   "scope": "/",
-"scope_extensions": [
-    {"origin": "mansitee.github.io"},
-    {"origin": "mansitee.github.io/app"},
-    {"origin": "mansitee.github.io/app/a"},
-  ],
-{
-  "web_apps": [
-    {
-      "web_app_identity": "https://mansitee.github.io"
-    }
-  ]
-},
-
   "lang": "id",
   "orientation": "portrait",
 "handle_links": "preferred",
