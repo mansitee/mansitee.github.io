@@ -52,6 +52,7 @@
   "scope": "/",
   "lang": "id",
   "orientation": "portrait",
+"handle_links": "preferred",
   "display_override": [
     "browser",
     "standalone",
