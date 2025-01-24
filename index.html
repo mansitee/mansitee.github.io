@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light and Dark</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+<div class="container">
+    <div class="wrapper">
+
+        <div class="dark-button">
+            <span></span>
+        </div>
+
+        <div class="box">
+            
+            <div class="user">
+                <img src="user.png" alt="user">
+                <h4>Mansite<span>Likes to modify the website</span></h4>
+            </div>
+            
+            <p><b>Testing</b> 12 Januari 2025</p>
+            <h2>sit amet consectetur adipisicing elit. Et, molestias.</h2>
+
+            <div class="img-box">
+                <img src="bg.jpg" alt="Picture">
+            </div>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero delectus necessitatibus expedita itaque assumenda! Quam molestiae sed sint dolore? A sint placeat totam ipsum officiis. Dignissimos corrupti fuga enim recusandae.</p>
+        </div>
+
+        <button>Read More</button>
+
+    </div>
+</div>
+
+
+<script>
+
+var button = document.querySelector(".dark-button");
+
+button.onclick = function(){
+    button.classList.toggle("active");
+    document.body.classList.toggle("active-dark")
+}
+
+</script>
+
+
+</body>
+</html>

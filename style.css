@@ -1,0 +1,146 @@
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+}
+:root{
+    --background: #eff2f9; 
+    --foreground: #fff;
+    --text-black: #161f3e;
+    --text-grey : #919191;
+    --primary: #6a74c9;
+}
+
+.active-dark{
+    --background: #0a112b; 
+    --foreground: #161f3e;
+    --text-black: #9baadd;
+    --text-grey : #c0c0c0;
+    --primary: #6a74c9;
+}
+
+body{
+    background: var(--background);
+    transition: .3s;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper{
+    background: var(--foreground);
+    width: 340px;
+    overflow: hidden;
+    border-radius: 20px;
+    tbox-shadow: 0px 0px 2px 0px #6a74c9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s;
+    position: relative;
+}
+.wrapper:hover{
+    box-shadow: 0px 0px 5px 0px #6a74c9;
+}
+.user{
+    display: flex;
+    margin-bottom: 15px;
+}
+.user img{
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    border-radius: 50px;
+    box-shadow: 0 0 0 3px #76767636;
+}
+.user h4{
+    font-size: 16px;
+    margin-left: 10px;
+    color: var(--text-black);
+
+}
+.user h4 span{
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-grey);
+}
+
+.box p{
+    color: var(--text-grey);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.box p b{
+    background: #6a74c933;
+    padding: 2px 8px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 12px;
+    margin-right: 5px;
+    color: var(--text-black);
+    text-transform: uppercase;
+}
+
+.box h2{
+    font-size: 16px;
+    margin: 15px 0;
+    color: var(--primary);
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.img-box img{
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.wrapper button{
+    background: var(--primary);
+    padding: 8px 15px;
+    border: none;
+    display: block;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px 0;
+    color: #eff2f9;
+    transition: .5s;
+}
+.wrapper button:hover{
+    background: #4954b6;
+}
+
+.dark-button{
+    width: 30px;
+    height: 18px;
+    background: #6a74c9;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border-radius: 50px;
+    transition: .5s;
+    display: flex;
+    align-items: center;
+    padding-left: 3px;
+    cursor: pointer;
+}
+
+.dark-button span{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #eff2f9;
+    border-radius: 50px;
+}
+
+.dark-button.active{
+    padding-left: 15px;
+}
