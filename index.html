@@ -1,12 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-  <meta name="google-site-verification" content="srhDQgg5B6TqeHkVO8vdnysAYv3-6FHyPuCjOUg8-O8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head> <meta charset="UTF-8">
+	<meta name="google-site-verification" content="srhDQgg5B6TqeHkVO8vdnysAYv3-6FHyPuCjOUg8-O8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"> <meta name="renderer" content="webkit">
+<meta name="force-rendering" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>Light and Dark</title>
-    <link rel="stylesheet" href="style.css">
+    <style> *{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+}
+:root{
+    --background: #eff2f9; 
+    --foreground: #fff;
+    --text-black: #161f3e;
+    --text-grey : #919191;
+    --primary: #6a74c9;
+}
+
+.active-dark{
+    --background: #0a112b; 
+    --foreground: #161f3e;
+    --text-black: #9baadd;
+    --text-grey : #c0c0c0;
+    --primary: #6a74c9;
+}
+
+body{
+    background: var(--background);
+    transition: .3s;
+    -webkit-overflow-scrolling:touch;-webkit-tap-highlight-color:transparent;
+}
+       a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;-webkit-overflow-scrolling:touch;-webkit-tap-highlight-color:transparent;}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper{
+    background: var(--foreground);
+    width: 340px;
+    overflow: hidden;
+    border-radius: 20px;
+    tbox-shadow: 0px 0px 2px 0px #6a74c9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s;
+    position: relative;
+}
+.wrapper:hover{
+    tbox-shadow: 0px 0px 5px 0px #6a74c9;
+} 
+.user{
+    display: flex;
+    margin-bottom: 15px;
+}
+.user img{
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    border-radius: 50px;
+    box-shadow: 0 0 0 3px #76767636;
+}
+.user h4{
+    font-size: 16px;
+    margin-left: 10px;
+    color: var(--text-black);
+
+}
+.user h4 span{
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-grey);
+}
+
+.box p{
+    color: var(--text-grey);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.box p b{
+    background: #6a74c933;
+    padding: 2px 8px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 12px;
+    margin-right: 5px;
+    color: var(--text-black);
+    text-transform: uppercase;
+}
+
+.box h2{
+    font-size: 16px;
+    margin: 15px 0;
+    color: var(--primary);
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.img-box img{
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.wrapper button{
+    background: var(--primary);
+    padding: 8px 15px;
+    border: none;
+    display: block;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px 0;
+    color: #eff2f9;
+    transition: .5s;
+}
+.wrapper button:hover{
+    background: #4954b6;
+}
+
+.dark-button{
+    width: 30px;
+    height: 18px;
+    background: #6a74c9;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border-radius: 50px;
+    transition: .5s;
+    display: flex;
+    align-items: center;
+    padding-left: 3px;
+    cursor: pointer;
+}
+
+.dark-button span{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #eff2f9;
+    border-radius: 50px;
+}
+
+.dark-button.active{
+    padding-left: 15px;
+}
+
+
+
+.grid {display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap:5px;
+            margin-top: 20px;
+        }
+            .card {
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: var(--primary);background: var(--background);}
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;-webkit-overflow-scrolling:touch;-webkit-tap-highlight-color:transparent;}
+        a:hover {
+            text-decoration: underline;}
+        </style>
 </head>
 <body>
     
@@ -21,7 +193,7 @@
         <div class="box">
             
             <div class="user">
-                <img src="user.png" alt="user">
+                <img src="https://mansitee.github.io/user.png" alt="user">
                 <h4>Mansite<span>Likes to modify the website</span></h4>
             </div>
             
@@ -29,12 +201,21 @@
             <h2>sit amet consectetur adipisicing elit. Et, molestias.</h2>
 
             <div class="img-box">
-                <img src="bg.jpg" alt="Picture">
+                <img src="https://mansitee.github.io/bg.jpg" alt="Picture">
             </div>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero delectus necessitatibus expedita itaque assumenda! Quam molestiae sed sint dolore? A sint placeat totam ipsum officiis. Dignissimos corrupti fuga enim recusandae.</p>
+            <p>Ieu mangrupikeun halaman anu munggaran disalin.Dies ist die erste Seite kopiert.</p>
         </div>
-
+        
+        
+<div class="grid">        
+ <div class="card"> <a href="https://mansitee.github.io/app">APP</a></div>       
+ <div class="card"><a href="https://mansitee.github.io/p">P:/</a></div>       
+<div class="card"><a href="https://mansitee.github.io/do">Test:/do</a></div>       <div class="card"><a href="https://mansitee.github.io/b/">Test:/b</a></div>      
+ <div class="card"><a href="https://mansitee.github.io/userscript">UserScript</a></div>       
+ <div class="card"><a href="https://mansitee.github.io/">mansitee</a></div>       
+                                 
+</div>   
         <button>Read More</button>
 
     </div>
