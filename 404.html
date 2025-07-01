@@ -5,28 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404 - Halaman Tidak Ditemukan</title>
   <style>
+    :root {
+      --bg-color: #f9fafb;
+      --text-color: #1f2937;
+      --accent-color: #2563eb;
+      --shadow-color: rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      background-color: #f0f0f0;
-      color: #333;
-      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 100px;
+      height: 100vh;
+      padding: 20px;
     }
+
     h1 {
-      font-size: 48px;
+      font-size: clamp(48px, 8vw, 72px);
+      font-weight: 700;
+      margin-bottom: 20px;
     }
+
     p {
       font-size: 18px;
+      margin-bottom: 10px;
     }
+
     a {
-      color: #007acc;
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: var(--accent-color);
+      color: white;
       text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      box-shadow: 0 2px 8px var(--shadow-color);
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #1d4ed8;
     }
   </style>
 </head>
 <body>
   <h1>404</h1>
-  <p>Halaman yang Anda cari tidak ditemukan.</p>
-  <p><a href="/">Kembali ke Beranda</a></p>
+  <p>Maaf, halaman yang Anda cari tidak ditemukan.</p>
+  <a href="index.html">Kembali ke Beranda</a>
 </body>
-</html>
+</html
