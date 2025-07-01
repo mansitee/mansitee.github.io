@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mengalihkan...</title>
+  <style>
+    :root {
+      --bg: #f0f4f8;
+      --primary: #007bff;
+      --text: #333;
+      --card: white;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .card h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .card p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 4px solid var(--primary);
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    a.button {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    a.button:hover {
+      background: #005fcc;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="loader"></div>
+    <h1>Mengalihkan...</h1>
+    <p>Mohon tunggu sebentar. Anda akan diarahkan ke halaman tujuan.</p>
+    <p><a href="#" id="manualLink" class="button">Klik jika tidak otomatis</a></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const targetUrl = params.get('to');
+
+    if (targetUrl && targetUrl.startsWith('http')) {
+      document.getElementById('manualLink').href = targetUrl;
+      setTimeout(() => {
+        window.location.href = targetUrl;
+      }, 2000);
+    } else {
+      document.querySelector('h1').textContent = 'URL tujuan tidak ditemukan';
+      document.querySelector('.loader').style.display = 'none';
+      document.querySelector('p').textContent = 'Pastikan URL mengandung parameter ?to=';
+      document.getElementById('manualLink').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
