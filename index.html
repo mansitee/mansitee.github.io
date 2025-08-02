@@ -1,0 +1,319 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="google-site-verification" content="srhDQgg5B6TqeHkVO8vdnysAYv3-6FHyPuCjOUg8-O8" />
+
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"> 	
+  <title>@mansitee - Bio Link</title>
+  <style>
+    :root {
+      --bg: #f8f8f8;
+      --text: #222;
+      --card: #fff;
+      --primary: #007bff;
+      --radius: 1rem;
+      --max-width: 768px;
+    }
+    [data-theme='dark'] {
+      --bg: #111;
+      --text: #eee;
+      --card: #1c1c1c;
+      --primary: #4eaaff;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s ease all;
+    }
+    
+    .icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.material-icons-outlined {
+  font-size: 1.5rem;
+  color: var(--text);
+  display: block;
+  text-align: center;
+}
+
+.material-icons-outlined {
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      max-width: var(--max-width);
+      margin: auto;
+    }
+    header img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid var(--primary);
+    }
+    h1 { margin: 0.5rem 0 0; }
+    p { margin: 0.25rem 0 1rem; font-size: 0.9rem; color: var(--text); }
+    .section {
+      padding: 1rem;
+      max-width: var(--max-width);
+      margin: auto;
+    }
+    .group-title {
+      margin-top: 2rem;
+      font-weight: bold;
+      font-size: 1rem;
+      opacity: 0.6;
+    }
+    .link-card, .media-card {
+      margin: 0.75rem 0;
+      background: var(--card);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .link-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .link-card a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      flex: 1;
+      overflow-wrap: anywhere;
+    }
+    
+    a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;-webkit-overflow-scrolling:touch;-webkit-tap-highlight-color:transparent;}
+
+    .tools button {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-left: 0.25rem;
+      cursor: pointer;
+    }
+    .toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--card);
+      border: none;
+      padding: 0.5rem;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      color: var(--primary);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+    .lazy {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+    }
+    .lazy.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    iframe, video, audio {
+      width: 100%;
+      max-width: 100%;
+      margin: 0.5rem 0;
+      display: block;
+      border-radius: var(--radius);
+    }
+    
+    .social-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+  grid-template-columns: repeat(3, 1fr); /* default untuk mobile */
+}
+
+@media (min-width: 768px) {
+  .social-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+
+    .tsocial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .social-grid a {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      font-size: 0.9rem;
+      transition: transform 0.2s ease;
+    }
+    .social-grid a:hover {
+      transform: translateY(-4px);
+    }
+    .social-grid a .icon {
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .tabbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--card);
+  tborder-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  z-index: 100;
+}
+
+@media (min-width: 768px) {
+  .tabbar {
+    display: none !important;
+  }
+}
+    .tabbar a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1.2rem;
+    }
+    .skeleton {
+      background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: var(--radius);
+      height: 80px;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle" onclick="toggleTheme()">🌓</button>
+  <header>
+    <img src="https://avatars.githubusercontent.com/u/1517419?v=4" alt="mansitee" loading="lazy">
+    <h1>@mansitee</h1>
+    <p>Modder • Developer • Web Enthusiast. Membuat solusi ringan, modern, dan ramah DOM untuk semua pengguna web.</p>
+  </header>
+  <main class="section">
+    <div class="social-grid">
+  <a href="https://facebook.com/mansitee" target="_blank">
+    <div class="icon material-icons-outlined">facebook</div>Facebook
+  </a>
+  <a href="https://youtube.com/@mansitee" target="_blank">
+    <div class="icon material-icons-outlined">smart_display</div>YouTube
+  </a>
+  <a href="https://tiktok.com/@mansitee" target="_blank">
+    <div class="icon material-icons-outlined">music_note</div>TikTok
+  </a>
+  <a href="https://github.com/mansitee" target="_blank">
+    <div class="icon material-icons-outlined">code</div>GitHub
+  </a>
+  <a href="https://t.me/mansitee" target="_blank">
+    <div class="icon material-icons-outlined">send</div>Telegram
+  </a>
+</div>
+	
+<div class="link-group" id="link-list"></div>
+
+
+<div class="group-title">Video Lokal</div>
+<div class="media-card lazy"><video controls loading="lazy"><source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"></video></div>
+
+<div class="group-title">Audio</div>
+<div class="media-card lazy"><audio controls loading="lazy"><source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg"></audio></div>
+
+  </main>  <div class="tabbar">
+    <a href="#"><span class="material-icons-outlined">home</span></a>
+<a href="#"><span class="material-icons-outlined">link</span></a>
+<a href="#"><span class="material-icons-outlined">photo_camera</span></a>
+<a href="#"><span class="material-icons-outlined">settings</span></a>
+  </div>  <script>
+    const links = [
+      { category: "Sosial", name: "GitHub", url: "https://mansitee.github.io/redirect.html?to=https://github.com/mansitee" },
+      { category: "Sosial", name: "Telegram", url: "https://mansitee.github.io/redirect.html?to=https://t.me/mansitee" },
+      { category: "Proyek", name: "Blog", url: "https://mansitee.github.io/redirect.html?to=https://mansitee.github.io/blog" },
+      { category: "Proyek", name: "Daftar Tools #Mod", url: "https://mansitee.github.io/redirect.html?to=https://mansitee.github.io/p" }, { category: "Proyek", name: "Daftar Aplikasi Aku Suka", url: "https://mansitee.github.io/p" }
+    ];
+
+    const grouped = links.reduce((acc, link) => {
+      acc[link.category] = acc[link.category] || [];
+      acc[link.category].push(link);
+      return acc;
+    }, {});
+
+    const container = document.getElementById("link-list");
+    for (const cat in grouped) {
+      const group = document.createElement("div");
+      group.innerHTML = `<div class='group-title'>${cat}</div>`;
+      grouped[cat].forEach(l => {
+        const div = document.createElement("div");
+        div.className = "link-card lazy skeleton";
+        div.innerHTML = `
+          <a href="${l.url}" target="_blank">${l.name}</a>
+          <div class="tools">
+            <button onclick="copy('${l.url}')">
+  <span class="material-icons-outlined">content_copy</span>
+</button>
+<button onclick="share('${l.name}','${l.url}')">
+  <span class="material-icons-outlined">share</span>
+</button>
+          </div>`;
+        group.appendChild(div);
+      });
+      container.appendChild(group);
+    }
+
+    const lazyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          entry.target.classList.remove("skeleton");
+          lazyObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".lazy").forEach(el => lazyObserver.observe(el));
+
+    function copy(text) {
+      navigator.clipboard.writeText(text).then(() => alert("Disalin ke clipboard!"));
+    }
+    function share(title, url) {
+      if (navigator.share) {
+        navigator.share({ title, url });
+      } else {
+        alert("Browser tidak mendukung Web Share API");
+      }
+    }
+    function toggleTheme() {
+      const t = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = t;
+      localStorage.setItem("theme", t);
+    }
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || 'light';
+  </script></body>
+</html>
